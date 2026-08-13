@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineWave — Movie Discovery</title>
+  <meta name="description" content="CineWave is a modern movie discovery website.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="logo" href="#" aria-label="CineWave home"><span>🎬</span> CineWave</a>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#movies">Movies</a>
+        <a href="#genres">Genres</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">☾</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <p class="eyebrow">DISCOVER • WATCH • ENJOY</p>
+        <h1>Find your next<br><span>favorite movie.</span></h1>
+        <p class="hero-copy">Browse popular films, explore genres, watch trailers, and discover where movies are legally available.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#movies">Explore Movies</a>
+          <button class="btn ghost" id="randomBtn">🎲 Surprise Me</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbar container" id="movies">
+      <div class="search-wrap">
+        <span>⌕</span>
+        <input id="searchInput" type="search" placeholder="Search movies..." autocomplete="off">
+      </div>
+      <select id="genreSelect" aria-label="Filter by genre">
+        <option value="all">All genres</option>
+      </select>
+      <select id="sortSelect" aria-label="Sort movies">
+        <option value="popular">Most popular</option>
+        <option value="rating">Highest rated</option>
+        <option value="year">Newest</option>
+        <option value="az">A–Z</option>
+      </select>
+    </section>
+
+    <section class="container section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">CURATED FOR YOU</p>
+          <h2>Featured movies</h2>
+        </div>
+        <span id="resultCount" class="muted"></span>
+      </div>
+      <div id="movieGrid" class="movie-grid"></div>
+      <div id="emptyState" class="empty hidden">
+        <div>🍿</div>
+        <h3>No movies found</h3>
+        <p>Try another title or genre.</p>
+      </div>
+    </section>
+
+    <section class="container section" id="genres">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">EXPLORE</p>
+          <h2>Browse by genre</h2>
+        </div>
+      </div>
+      <div id="genreChips" class="genre-chips"></div>
+    </section>
+
+    <section class="container about section" id="about">
+      <div>
+        <p class="eyebrow">ABOUT CINEWAVE</p>
+        <h2>A clean starting point for your movie site.</h2>
+      </div>
+      <p>CineWave is a front-end template. Replace the sample catalog with your own licensed movie data, posters, trailers, and legal viewing links. No copyrighted movies are hosted by this template.</p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <span>© 2026 CineWave</span>
+      <span>Movie discovery • Built with HTML, CSS & JavaScript</span>
+    </div>
+  </footer>
+
+  <div class="modal hidden" id="movieModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <article class="modal-card">
+      <button class="close-btn" id="closeModal" aria-label="Close">×</button>
+      <img id="modalPoster" src="" alt="">
+      <div class="modal-info">
+        <p class="eyebrow" id="modalMeta"></p>
+        <h2 id="modalTitle"></h2>
+        <p id="modalDescription"></p>
+        <div class="modal-actions">
+          <a id="trailerLink" class="btn primary" href="#" target="_blank" rel="noopener">▶ Watch Trailer</a>
+          <a id="legalLink" class="btn ghost" href="#" target="_blank" rel="noopener">Where to Watch</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
